@@ -28,8 +28,10 @@ function updateBallastValues()
     local currentBallast = car.ballast
     local changeFactor = (ballastChangHalfLife_sec * maxBallast_kg / (maxBallast_kg * 0.7))
     local changedBallast = currentBallast + (targetBallast - currentBallast) / changeFactor
-    ac.log(changedBallast)
     local newBallast = math.max(0, math.min(maxBallast_kg, changedBallast))
+    if( newBallast ~= newBallast) then
+        newBallast = 0
+    end
     physics.setCarBallast(0, newBallast)
     ac.log("Setting own Ballast: " .. newBallast .. "kg")
     --car.ballast
