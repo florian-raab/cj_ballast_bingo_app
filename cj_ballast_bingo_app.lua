@@ -14,7 +14,7 @@ function script.windowMain(dt)
             ui.text("#" .. car.racePosition)
 
             ui.setCursor(vec2(60, racePosition * ui.fontSize() + 30))
-            ui.text(car.ballast .. " kg")
+            ui.text(math.round(car.ballast) .. " kg")
 
             ui.setCursor(vec2(130, racePosition * ui.fontSize() + 30))
             ui.text(car:driverName())

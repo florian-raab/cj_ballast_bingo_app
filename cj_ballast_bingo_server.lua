@@ -1,6 +1,3 @@
-local config = ac.storage {
-}
-
 local maxBallast_kg = ac.getCar(0).mass
 local ballastChangHalfLife_sec = 30
 
@@ -8,7 +5,7 @@ function updateBallastValues()
     if not ac.getSim().isOnlineRace then
         return
     end
-    if not ac.SessionType.Race == ac.getSim().raceSessionType then
+    if ac.SessionType.Race ~= ac.getSim().raceSessionType then
         return
     end
     if not ac.getSim().isSessionStarted then
@@ -43,6 +40,5 @@ setInterval(updateBallastValues, 1, "updateBallastInterval")
 
 
 function script.update(dt)
-
 
 end
