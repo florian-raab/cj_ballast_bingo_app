@@ -1,5 +1,5 @@
 local maxBallast_kg = ac.getCar(0).mass
-local ballastChangHalfLife_sec = 30
+local ballastChangHalfLife_sec = 120
 
 function updateBallastValues()
     if not ac.getSim().isOnlineRace then
